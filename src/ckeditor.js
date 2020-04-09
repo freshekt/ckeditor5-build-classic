@@ -30,6 +30,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import Emoji from '@wwalc/ckeditor5-emoji/src/emoji';
+import ImageButton from './plugins/filesManager/ImageButton';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -58,14 +59,15 @@ ClassicEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	TextTransformation,
-	Emoji
+	Emoji,
+	ImageButton
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
-			'emoji'
+			'emoji', 'imageButton'
 		]
 	},
 	image: {
