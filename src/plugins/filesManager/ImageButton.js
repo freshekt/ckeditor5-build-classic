@@ -1,10 +1,11 @@
 
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
-
+import icon from './icons/image.svg';
 export default class ImageButton extends Plugin {
 	constructor( editor, callback ) {
 		super( editor );
+
 		this.callback = callback;
 	}
 
@@ -14,12 +15,12 @@ export default class ImageButton extends Plugin {
 
 			view.set( {
 				label: 'Insert image',
-				icon: 'icons/image.svg',
+				icon,
 				tooltip: true
 			} );
 
 			// Callback executed once the image is clicked.
-			view.on( 'execute', () => this.callback && this.callback() );
+			view.on( 'execute', () => this.editor.insertImage() );
 
 			return view;
 		} );
